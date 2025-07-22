@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Daily Schedule Simulation</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
+
+  <h1>My Simulated Day</h1>
+  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    function showActivity(message, delay) {
+      setTimeout(() => {
+        const p = document.createElement("p");
+        p.textContent = message;
+        output.appendChild(p);
+      }, delay);
+    }
+
+    // Simulated daily schedule
+    showActivity("7:00 AM - Got out of bed and checked my phone", 1000);
+    showActivity("7:30 AM - Made some coffee and toast", 2000);
+    showActivity("8:00 AM - Logged in to class website", 3000);
+    showActivity("10:00 AM - Started working on assignments", 4000);
+    showActivity("12:00 PM - Took a lunch break", 5000);
+    showActivity("2:00 PM - Continued working with some music on", 6000);
+
+    // Surprise twist
+    const twistOptions = [
+      "3:30 PM - Unexpectedly took a short nap",
+      "3:30 PM - Got distracted watching random YouTube videos",
+      "3:30 PM - Took a walk around the block to refresh",
+      "3:30 PM - Phone call from a friend interrupted everything"
+    ];
+    const randomIndex = Math.floor(Math.random() * twistOptions.length);
+    showActivity(twistOptions[randomIndex], 7000);
+
+    showActivity("5:00 PM - Wrapped up and reviewed the work", 8000);
+    showActivity("8:00 PM - Took a break and relaxed", 9000);
+    showActivity("11:00 PM - Went to bed", 10000);
+  </script>
+
+</body>
+</html>
